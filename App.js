@@ -1,6 +1,7 @@
 //import React from 'react';
 import {useState, useEffect} from 'react';
-import { Text, SafeAreaView, StyleSheet, View, Image, TextInput, TouchableOpacity , AsyncStorage} from 'react-native';
+import { Text, SafeAreaView, StyleSheet, View, Image, TextInput, TouchableOpacity} from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
@@ -11,6 +12,7 @@ export default function App() {
   const save = async () => {
     try{
       await AsyncStorage.setItem("MyName", name);
+      console.log('Data stored successfully!');
     }catch (err){
       alert(err);
     }
@@ -35,8 +37,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
-      <Image 
+    <Image 
         source = {require("./assets/christmas-wreath.png")} 
         style={{width:'100%', height:200, marginTop:64}}
         resizeMode="contain"
@@ -44,7 +45,7 @@ export default function App() {
       
       <Text style={{height:30, marginVertical:10}}>{name}</Text>
 
-      <Text style={styles.name}>What's your name?</Text>
+      <Text style={styles.name}>What's yourmm name?</Text>
 
       <TextInput style={styles.input} onChangeText={text => setName(text)}/>
 
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   },
   name:{
     fontSize:24,
-    fontWeight:"330", 
+    //fontWeight:"330", 
     marginBottom:5
   },
 
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     borderRadius:6,
     paddingHorizontal:16,
     fontSize:24,
-    fontWeight:300
+    //fontWeight:300
 
   },
   
