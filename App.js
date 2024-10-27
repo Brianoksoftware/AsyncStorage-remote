@@ -65,7 +65,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: '#E0F7FA',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
   
   button:{
-    backgroundColor:"#575DD9",
+    backgroundColor:"#3CB371",
     alignItems: "center",
     justifyContent:"center",
     alignSelf:"stretch",
