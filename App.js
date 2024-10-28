@@ -4,11 +4,10 @@ import { Text, SafeAreaView, StyleSheet, View, Image, TextInput, TouchableOpacit
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
-
 export default function App() {
 
   const [name, setName] = useState();
-
+  
   const save = async () => {
     try{
       await AsyncStorage.setItem("MyName", name);
@@ -16,7 +15,6 @@ export default function App() {
     }catch (err){
       alert(err);
     }
-
   }
 
   const load = async () => {
@@ -36,28 +34,29 @@ export default function App() {
   }, []);
 
   return (
+  
     <View style={styles.container}>
-    <Image 
-        source = {require("./assets/christmas-wreath.png")} 
-        style={{width:'100%', height:200, marginTop:64}}
-        resizeMode="contain"
-      />
-      
-      <Text style={{height:30, marginVertical:10}}>{name}</Text>
+	
+		<Image 
+			source = {require("./assets/christmas-wreath.png")} 
+			style={{width:'100%', height:200, marginTop:64}}
+			resizeMode="contain"
+		/>
+		  
+		<Text style={{height:30, marginVertical:10}}>{name}</Text>
 
-      <Text style={styles.name}>What's yourmm name?</Text>
+		<Text style={styles.name}>What's your name?</Text>
 
-      <TextInput style={styles.input} onChangeText={text => setName(text)}/>
+		<TextInput style={styles.input} onChangeText={text => setName(text)}/>
 
-      <TouchableOpacity style={styles.button} onPress={() => save()}> 
-        <Text style={{color:"white"}}>Save my name</Text>
-      </TouchableOpacity>
+		<TouchableOpacity style={styles.button} onPress={() => save()}> 
+		<Text style={{color:"white"}}>Save my name</Text>
+		</TouchableOpacity>
 
-       <TouchableOpacity style={styles.button} onPress = {() => load()}> 
-        <Text style={{color:"white"}}>Remove my name</Text>
-      </TouchableOpacity>
-
-
+		<TouchableOpacity style={styles.button} onPress = {() => load()}> 
+			<Text style={{color:"white"}}>Remove my name</Text>
+		</TouchableOpacity>
+		
     </View>
   );
 }
@@ -86,6 +85,7 @@ const styles = StyleSheet.create({
     paddingHorizontal:16,
     fontSize:24,
     //fontWeight:300
+	//
 
   },
   
@@ -100,8 +100,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 32,
     marginVertical:12, 
     height:50
-
   }
-  
   
 });
