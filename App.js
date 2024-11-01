@@ -50,11 +50,11 @@ export default function App() {
 		<TextInput style={styles.input} onChangeText={text => setName(text)}/>
 
 		<TouchableOpacity style={styles.button} onPress={() => save()}> 
-		<Text style={{color:"white"}}>Save my name</Text>
+		<Text style={{color:"white"}}>Save data</Text>
 		</TouchableOpacity>
 
 		<TouchableOpacity style={styles.button} onPress = {() => load()}> 
-			<Text style={{color:"white"}}>Remove my name</Text>
+			<Text style={{color:"white"}}>Delete data</Text>
 		</TouchableOpacity>
 		
     </View>
